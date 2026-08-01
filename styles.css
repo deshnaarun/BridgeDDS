@@ -409,6 +409,77 @@ a {
   font-size: 0.85rem;
 }
 
+/* Become a Mentor (new layout) */
+.become {
+  padding: 88px 0 100px;
+  border-top: 1px solid var(--border);
+}
+
+.become-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.become-left h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 16px 0 20px;
+}
+
+.become-text {
+  color: var(--text-gray);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.become-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.perk-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.perk-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #eaf0ff;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perk-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.perk-card p {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
 /* Placeholder sections */
 .placeholder {
   padding: 96px 0;
@@ -474,6 +545,15 @@ a {
 
   .mentors-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .become-card {
+    grid-template-columns: 1fr;
+    padding: 36px;
+  }
+
+  .become-left h2 {
+    font-size: 1.9rem;
   }
 }
 
