@@ -337,7 +337,6 @@ a {
 /* Become a Mentor */
 .mentors {
   padding: 88px 0 100px;
-  border-top: 1px solid var(--border);
   text-align: center;
 }
 
@@ -439,7 +438,6 @@ a {
 /* Become a Mentor (new layout) */
 .become {
   padding: 88px 0 100px;
-  border-top: 1px solid var(--border);
 }
 
 .become-card {
@@ -517,7 +515,6 @@ a {
 /* Resources */
 .resources {
   padding: 88px 0 100px;
-  border-top: 1px solid var(--border);
   background: #f8fafc;
   text-align: center;
 }
@@ -581,7 +578,6 @@ a {
 /* FAQ */
 .faq {
   padding: 88px 0 100px;
-  border-top: 1px solid var(--border);
 }
 
 .faq-layout {
@@ -697,7 +693,6 @@ a {
 /* Contact */
 .contact {
   padding: 88px 0 100px;
-  border-top: 1px solid var(--border);
 }
 
 .contact-card {
@@ -742,7 +737,6 @@ a {
 
 /* Footer */
 .footer {
-  border-top: 1px solid var(--border);
   padding: 56px 0 0;
   color: var(--text-gray);
   font-size: 0.9rem;
@@ -805,7 +799,6 @@ a {
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border);
   padding: 24px 0;
   text-align: center;
 }
