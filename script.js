@@ -101,3 +101,59 @@ const counterObserver = new IntersectionObserver(
 );
 
 counters.forEach((el) => counterObserver.observe(el));
+
+document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+  const track = carousel.querySelector("[data-track]");
+  const prevBtn = carousel.querySelector(".carousel-btn.prev");
+  const nextBtn = carousel.querySelector(".carousel-btn.next");
+  const AUTOPLAY_DELAY = 3500;
+  let autoplayId = null;
+
+  const scrollStep = () => {
+    const card = track.querySelector(".mentor-card");
+    if (!card) return 0;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  };
+
+  const advance = () => {
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    if (atEnd) {
+      track.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      track.scrollBy({ left: scrollStep(), behavior: "smooth" });
+    }
+  };
+
+  const retreat = () => {
+    if (track.scrollLeft <= 4) {
+      track.scrollTo({ left: track.scrollWidth, behavior: "smooth" });
+    } else {
+      track.scrollBy({ left: -scrollStep(), behavior: "smooth" });
+    }
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayId = setInterval(advance, AUTOPLAY_DELAY);
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayId) clearInterval(autoplayId);
+  };
+
+  nextBtn.addEventListener("click", () => {
+    advance();
+    startAutoplay();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    retreat();
+    startAutoplay();
+  });
+
+  carousel.addEventListener("mouseenter", stopAutoplay);
+  carousel.addEventListener("mouseleave", startAutoplay);
+
+  startAutoplay();
+});

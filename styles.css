@@ -344,11 +344,54 @@ a {
   margin-bottom: 56px;
 }
 
+.mentor-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .mentors-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 24px;
   text-align: left;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 4px 12px;
+  scrollbar-width: none;
+}
+
+.mentors-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.mentors-grid .mentor-card {
+  flex: 0 0 calc((100% - 2 * 24px) / 3);
+  scroll-snap-align: start;
+}
+
+.carousel-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(20, 22, 26, 0.06);
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.carousel-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: scale(1.05);
 }
 
 .mentor-card {
@@ -843,8 +886,8 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .mentors-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .mentors-grid .mentor-card {
+    flex: 0 0 calc((100% - 24px) / 2);
   }
 
   .become-card {
@@ -887,8 +930,12 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .mentors-grid {
-    grid-template-columns: 1fr;
+  .mentors-grid .mentor-card {
+    flex: 0 0 100%;
+  }
+
+  .carousel-btn {
+    display: none;
   }
 }
 

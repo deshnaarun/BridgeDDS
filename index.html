@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BridgeDDS — The Bridge Between Pre-Dental and Dental School</title>
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
 <body>
@@ -140,7 +140,12 @@
           <a href="#contact" class="btn btn-secondary btn-lg">Join the Mentor Waitlist</a>
         </div>
 
-        <div class="mentors-grid">
+        <div class="mentor-carousel" data-carousel>
+          <button class="carousel-btn prev" type="button" aria-label="Previous mentors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+
+          <div class="mentors-grid" data-track>
           <div class="mentor-card reveal">
             <div class="mentor-photo">
               <span class="coming-soon-badge">
@@ -304,6 +309,11 @@
               </p>
             </div>
           </div>
+          </div>
+
+          <button class="carousel-btn next" type="button" aria-label="Next mentors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
         </div>
 
         <p class="mentors-footnote">Mentor profiles will only be published with the mentor's permission.</p>
@@ -691,6 +701,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
