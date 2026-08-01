@@ -52,11 +52,17 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: 0 4px 16px rgba(20, 22, 26, 0.05);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar.scrolled .nav-container {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 24px rgba(20, 22, 26, 0.08);
 }
 
 .logo {
@@ -136,6 +142,14 @@ a {
   cursor: pointer;
   border: 1px solid transparent;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
 }
 
 .btn-primary {
@@ -239,7 +253,6 @@ a {
 /* How It Works */
 .how-it-works {
   padding: 88px 0 100px;
-  border-top: 1px solid var(--border);
   text-align: center;
 }
 
@@ -279,6 +292,13 @@ a {
   border-radius: 20px;
   padding: 32px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(20, 22, 26, 0.08);
+  border-color: #bfd0ff;
 }
 
 .step-number {
@@ -337,6 +357,13 @@ a {
   border-radius: 20px;
   overflow: hidden;
   background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.mentor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(20, 22, 26, 0.08);
+  border-color: #bfd0ff;
 }
 
 .mentor-photo {
@@ -455,6 +482,13 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.perk-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(20, 22, 26, 0.08);
+  border-color: #bfd0ff;
 }
 
 .perk-icon {
@@ -502,12 +536,13 @@ a {
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 28px;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .resource-card:hover {
-  box-shadow: 0 12px 24px rgba(20, 22, 26, 0.06);
-  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(20, 22, 26, 0.08);
+  transform: translateY(-6px);
+  border-color: #bfd0ff;
 }
 
 .resource-card-top {
@@ -861,5 +896,94 @@ a {
 
   .mentors-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.steps-grid .step-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.steps-grid .step-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.mentors-grid .mentor-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.mentors-grid .mentor-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.mentors-grid .mentor-card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.resources-grid .resource-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.resources-grid .resource-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.resources-grid .resource-card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.resources-grid .resource-card:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.resources-grid .resource-card:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+.become-right .perk-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.become-right .perk-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.faq-right .faq-item:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.faq-right .faq-item:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.faq-right .faq-item:nth-child(4) {
+  transition-delay: 0.15s;
+}
+
+.faq-right .faq-item:nth-child(5) {
+  transition-delay: 0.2s;
+}
+
+.faq-right .faq-item:nth-child(6) {
+  transition-delay: 0.25s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.in-view {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
