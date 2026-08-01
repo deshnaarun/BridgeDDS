@@ -588,6 +588,12 @@ a {
   font-weight: 700;
   font-size: 1.05rem;
   list-style: none;
+  transition: color 0.15s ease;
+}
+
+.faq-item summary:hover,
+.faq-item[open] summary {
+  color: var(--blue);
 }
 
 .faq-item summary::-webkit-details-marker {
