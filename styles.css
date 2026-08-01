@@ -240,6 +240,7 @@ a {
 .how-it-works {
   padding: 88px 0 100px;
   border-top: 1px solid var(--border);
+  background: #f8fafc;
   text-align: center;
 }
 
@@ -266,29 +267,35 @@ a {
   font-size: 1.05rem;
 }
 
-.steps-grid {
+.steps-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
   text-align: left;
-}
-
-.step-card {
-  position: relative;
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(20, 22, 26, 0.05);
   overflow: hidden;
 }
 
-.step-number {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  font-size: 3rem;
-  font-weight: 800;
-  color: #f1f2f4;
-  line-height: 1;
+.step-col {
+  padding: 40px 32px;
+}
+
+.step-col + .step-col {
+  border-left: 1px solid var(--border);
+}
+
+.step-badge {
+  display: inline-block;
+  background: #eaf0ff;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  padding: 5px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 24px;
 }
 
 .step-icon {
@@ -303,13 +310,13 @@ a {
   margin-bottom: 20px;
 }
 
-.step-card h3 {
+.step-col h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.step-card p {
+.step-col p {
   color: var(--text-gray);
   font-size: 0.95rem;
 }
@@ -468,8 +475,13 @@ a {
     font-size: 2rem;
   }
 
-  .steps-grid {
+  .steps-card {
     grid-template-columns: 1fr;
+  }
+
+  .step-col + .step-col {
+    border-left: none;
+    border-top: 1px solid var(--border);
   }
 
   .mentors-grid {
