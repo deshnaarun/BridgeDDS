@@ -480,6 +480,69 @@ a {
   font-size: 0.9rem;
 }
 
+/* Resources */
+.resources {
+  padding: 88px 0 100px;
+  border-top: 1px solid var(--border);
+  background: #f8fafc;
+  text-align: center;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+  margin-top: 56px;
+}
+
+.resource-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.resource-card:hover {
+  box-shadow: 0 12px 24px rgba(20, 22, 26, 0.06);
+  transform: translateY(-2px);
+}
+
+.resource-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.resource-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #eaf0ff;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-arrow {
+  color: var(--text-gray);
+}
+
+.resource-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.resource-card p {
+  color: var(--text-gray);
+  font-size: 0.92rem;
+}
+
 /* Placeholder sections */
 .placeholder {
   padding: 96px 0;
@@ -555,9 +618,17 @@ a {
   .become-left h2 {
     font-size: 1.9rem;
   }
+
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
   .mentors-grid {
     grid-template-columns: 1fr;
   }
